@@ -1,4 +1,4 @@
-# Description
+## Description
 
 Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
@@ -13,7 +13,7 @@ Please delete options that are not relevant.
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
 
-# How Has This Been Tested?
+## How Has This Been Tested?
 
 Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
 
@@ -27,7 +27,7 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - Toolchain:
 - SDK:
 
-# Checklist:
+## Checklist:
 
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
@@ -39,3 +39,5 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] My code resolved all of the task's acceptance criteria.
 - [ ] I ran Unit Tests locally before submitting.
+
+## Acceptance Criteria Scenarios
