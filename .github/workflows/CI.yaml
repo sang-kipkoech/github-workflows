@@ -33,7 +33,7 @@ jobs:
       
       - name: Run flake8
         run: |
-          python3 -m flake8 --append-config=setup.cfg
+          flake8 .
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
