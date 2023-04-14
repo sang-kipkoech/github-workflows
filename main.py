@@ -1,6 +1,7 @@
 import collections
 
-class CachingLRU:
+
+class CachingLRU(object):
 
     def __init__(self, capacity) -> None:
         self.capacity = capacity
