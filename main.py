@@ -1,6 +1,7 @@
 import collections
 
-class CachingLRU:
+
+class CachingLRU(object):
 
     def __init__(self, capacity) -> None:
         self.capacity = capacity
@@ -13,7 +14,7 @@ class CachingLRU:
             return value
         except KeyError:
             return -1
-    
+
     def set(self, key, value):
         try:
             self.cache.pop(key)
@@ -21,4 +22,3 @@ class CachingLRU:
             if len(self.cache) >= self.capacity:
                 self.cache.popitem(last=False)
                 self.cache[key] = value
-
