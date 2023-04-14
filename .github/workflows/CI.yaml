@@ -3,10 +3,33 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [pull_request]
 jobs:
   lint:
-    name: lint
+    name: flake8 lintintg
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Save state
+        run: echo "{name}={value}" >> $GITHUB_STATE
+
+      - name: Set output
+        run: echo "{name}={value}" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11
       - uses: actions/checkout@v3
+
+      - name: install dependencies
+        run: |
+          python -m pip install upgrade-pip
+          pip install flake8
+      
+      - name: Run flake8
+        run: |
+          flake8 .
+
       - uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
         with:
           # The GitHub API token to create reviews with
