@@ -14,7 +14,7 @@ class CachingLRU(object):
             return value
         except KeyError:
             return -1
-    
+
     def set(self, key, value):
         try:
             self.cache.pop(key)
@@ -22,4 +22,3 @@ class CachingLRU(object):
             if len(self.cache) >= self.capacity:
                 self.cache.popitem(last=False)
                 self.cache[key] = value
-
