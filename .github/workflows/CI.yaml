@@ -54,4 +54,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          python -m unittest test/tests.py
+          python -m unittest test
