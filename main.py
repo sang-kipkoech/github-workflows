@@ -1,5 +1,4 @@
 import collections
-import functools
 
 
 class CachingLRU(object):
