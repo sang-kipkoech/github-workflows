@@ -1,0 +1,16 @@
+name: Auto Request Review
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review] # Trigger on new pull requests
+
+jobs:
+  auto-request-review:
+    name: Auto Request Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request review
+        uses: peter-evans/request-changes@v1
+        with:
+          reviewers: ${{ github.event.pull_request.user.login }}
+          token: ${{ secrets.GITHUB_TOKEN }}
