@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Request review
-        uses: delivery-much/actions-assigner@v1
+        uses: necojackarc/auto-request-review@v0.10.0
         with:
-          reviewers: ${{ github.event.pull_request.user.login }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: ${{ github.event.pull_request.user.login }}
+          
+          
