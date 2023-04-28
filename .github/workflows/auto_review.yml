@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Request review
-        uses: peter-evans/request-changes@v1
+        uses: delivery-much/actions-assigner@v1
         with:
           reviewers: ${{ github.event.pull_request.user.login }}
           token: ${{ secrets.GITHUB_TOKEN }}
