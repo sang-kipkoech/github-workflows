@@ -58,3 +58,13 @@ jobs:
       - name: Run Tests
         run: |
           python -m unittest test
+
+  auto-request-review:
+    name: Auto Request Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request review
+        uses: necojackarc/auto-request-review@v0.10.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: "sang-kipkoech"
