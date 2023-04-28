@@ -9,11 +9,11 @@ jobs:
   add-reviewers:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.5
+      - uses: delivery-much/actions-assigner@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           add-reviewers: true
-          add-assignees: true
+          add-assignees: ${{author_association == 'OWNER' || author_association == 'MEMBER'}}}
           number-of-reviewers: 1
           number-of-assignees: 1
           skip-keywords: 'wip, draft' # comma-separated list of keywords
