@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Request review
-        uses: necojackarc/auto-request-review@v0.10.0
+        uses: delivery-much/actions-assigner@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: "sang-kipkoech"
