@@ -58,13 +58,3 @@ jobs:
       - name: Run Tests
         run: |
           python -m unittest test
-
-  auto-request-review:
-    name: Auto Request Review
-    runs-on: ubuntu-latest
-    steps:
-      - name: Request review
-        uses: delivery-much/actions-assigner@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          users: "sang-kipkoech"

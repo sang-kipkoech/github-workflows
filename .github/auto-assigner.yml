@@ -1,0 +1,11 @@
+---
+sang:
+  - sang-kipkoech
+sang2:
+  - shufo
+# you can use regexp
+sang.*:
+  - dorothy
+# fallback
+.*:
+  - brian
