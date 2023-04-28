@@ -1,7 +1,5 @@
 name: 'Auto Assign'
-on: 
-  pull_request:
-    types: [opened, reopened, ready_for_review]
+on: pull_request
 
 jobs:
   add-reviewers:
@@ -10,11 +8,4 @@ jobs:
       - uses: kentaro-m/auto-assign-action@v1.2.5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          add-reviewers: true
-          add-assignees: true
-          number-of-reviewers: 1
-          number-of-assignees: 1
-          skip-keywords: 'wip, draft' # comma-separated list of keywords
-          debug: true
-          include-reviewers: 'sang-kipkoech' # comma-separated list of usernames
           ignore-draft: true
