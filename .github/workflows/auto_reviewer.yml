@@ -3,8 +3,6 @@ name: Auto Assign Reviewers
 on:
   pull_request:
     types: [opened, reopened]
-    branches:
-      - main
 
 jobs:
   auto_assign_reviewers:
