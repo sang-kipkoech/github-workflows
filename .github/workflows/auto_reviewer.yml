@@ -1,13 +1,9 @@
-name: Auto Assign Reviewers
+name: 'Auto Assign'
+on: pull_request
 
-on:
-  pull_request:
-    types: [opened, reopened]
-    branches:
-      - main
 
 jobs:
-  auto_assign_reviewers:
+  add-reviewers:
     runs-on: ubuntu-latest
     steps:
       - uses: delivery-much/actions-assigner@v1
