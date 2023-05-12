@@ -1,3 +1,4 @@
+from typing import List
 from decorators import currency
 
 
@@ -44,3 +45,8 @@ def net_price(price, tax):
 
 
 print(net_price(100, 0.05))
+
+
+def sum_even_numbers(numbers: List[int]) -> int:
+    """Given a list of integers, return the sum of all even numbers in the list."""
+    return sum(num for num in numbers if num % 2 == 0)
