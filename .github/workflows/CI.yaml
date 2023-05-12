@@ -33,8 +33,6 @@ jobs:
       
       - name: Run Ruff
         run: |
-          pip install ruff
-
           ruff check --format=github --target-version=py311 .
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
