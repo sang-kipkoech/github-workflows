@@ -1,5 +1,4 @@
 import collections
-import time
 
 
 class CachingLRU(object):
