@@ -2,16 +2,6 @@ default_stages: [commit, push]
 default_language_version:
   python: python3.11
 repos:
-  - repo: https://github.com/psf/black
-    rev: 21.8b0
-    hooks:
-    - id: black
-      args: [
-        --line-length=80, 
-        --target-version=py38
-      ]
-      exclude: ^(env/|docs/)
-      types: ['python']
   - repo: https://github.com/PyCQA/flake8
     rev: 3.8.2
     hooks:
