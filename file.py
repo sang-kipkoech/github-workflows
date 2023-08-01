@@ -23,4 +23,8 @@ class LRUCache:
         self.tm += 1
 
 
-"Overall, Pytest's simplicity, powerful features, and community support make"
+"What happens next, we have tests already"
+"and we want to make sure we don't commit before the tests pass."
+"This is where git hooks come in. We have pre-commit hooks to"
+"help us ensure that all the tests pass pushing our code"
+"to an external repository."
