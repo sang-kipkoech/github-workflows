@@ -2,6 +2,10 @@ default_stages: [commit, push]
 default_language_version:
   python: python3.11
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
   - repo: https://github.com/PyCQA/flake8
     rev: 3.8.2
     hooks:
@@ -9,6 +13,7 @@ repos:
       args: [
         --max-line-length=80
       ]
-      exclude: ^(env/|docs/)
+      exclude: ^($)
+      fail_fast: false
       types: ['python']
-  
+
