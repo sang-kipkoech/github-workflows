@@ -2,6 +2,8 @@ name: Releases
 
 on:
     push:
+        tags:
+            - "v*"
         branches:
             - main
 jobs:
@@ -10,9 +12,6 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Setup Node.js environment
-              uses: actions/setup-node@v2.1.5
-
             - name: conventional Changelog Action
               id: changelog
               uses: TriPSs/conventional-changelog-action@v3
@@ -20,11 +19,8 @@ jobs:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: create release
-              uses: actions/create-release@v1
+              uses: "marvinpinto/action-automatic-releases@latest"
               if: ${{ steps.changelog.outputs.skipped == 'false'}}
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                tag_name: ${{ steps.changelog.outputs.tag }}
-                release_name: ${{ steps.changelog.outputs.tag }}
-                body: ${{ steps.changelog.outputs.clean_changelog }}
+                repo_token: ${{ secrets.GITHUB_TOKEN }}
+                prerelease: false
