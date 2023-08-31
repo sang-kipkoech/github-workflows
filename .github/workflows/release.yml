@@ -12,15 +12,8 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: conventional Changelog Action
-              id: changelog
-              uses: TriPSs/conventional-changelog-action@v3
-              with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-
             - name: create release
               uses: "marvinpinto/action-automatic-releases@latest"
-              if: ${{ steps.changelog.outputs.skipped == 'false'}}
               with:
                 repo_token: ${{ secrets.GITHUB_TOKEN }}
                 prerelease: false
