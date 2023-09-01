@@ -16,16 +16,4 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          script: |
-            const pr = context.payload.pull_request;
-            const reviewers = ['sang-kipkoech', 'BrianMuthuure97']; // Add the desired reviewers here
-            const owner = pr.base.user.login;
-            const repo = pr.base.repo.name;
-            const prNumber = pr.number;
-            
-            await github.pulls.requestReviewers({
-              owner,
-              repo,
-              pull_number: prNumber,
-              reviewers
-            });
+          token: ${{ secrets.GITHUB_TOKEN }}
