@@ -4,6 +4,13 @@ on:
     push:
         branches:
             - main
+        paths-ignore:
+        - package.json
+        - CHANGELOG.md
+env:
+  DIST_PATH: dist
+  RELEASE_PATH: output.zip
+
 jobs:
     changelog:
         runs-on: ubuntu-latest
