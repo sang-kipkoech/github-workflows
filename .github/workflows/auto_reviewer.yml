@@ -1,15 +1,19 @@
 name: Auto Assign Reviewers
-
 on:
   pull_request:
-    types: [opened, reopened]
-    branches:
-      - main
+    types:
+      - opened
 
 jobs:
-  auto_assign_reviewers:
+  assign_reviewer:
     runs-on: ubuntu-latest
     steps:
-      - uses: delivery-much/actions-assigner@v1
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Assign Reviewers
+        uses: actions/github-script@v4
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
